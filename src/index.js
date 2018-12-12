@@ -5,3 +5,4 @@
  */
 
 export { CheckPackageInstall, CheckYarnInstall, CheckNpmInstall } from './common/package-env'
+export { Exec } from './common/shell'
