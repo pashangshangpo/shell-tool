@@ -7,27 +7,6 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var Shell = _interopDefault(require('shelljs'));
 
 /**
- * @file 检测包环境
- * @author xiaozhihua
- * @date 2018-12-11 22:47:11
- */
-var CheckPackageInstall = function CheckPackageInstall(shell) {
-  return new Promise(function (resolve) {
-    Shell.exec(shell, {
-      silent: true
-    }, function (code) {
-      resolve(code === 0);
-    });
-  });
-};
-var CheckYarnInstall = function CheckYarnInstall() {
-  return CheckPackageInstall('yarnpkg --version');
-};
-var CheckNpmInstall = function CheckNpmInstall() {
-  return CheckPackageInstall('npm --version');
-};
-
-/**
  * @file shell
  * @author xiaozhihua
  * @date 2018-12-12 09:13:49
@@ -46,6 +25,23 @@ var Exec = function Exec(shell) {
       });
     });
   });
+};
+
+/**
+ * @file 检测包环境
+ * @author xiaozhihua
+ * @date 2018-12-11 22:47:11
+ */
+var CheckPackageInstall = function CheckPackageInstall(shell) {
+  return Exec(shell).then(function (res) {
+    return res.code === 0;
+  });
+};
+var CheckYarnInstall = function CheckYarnInstall() {
+  return CheckPackageInstall('yarnpkg --version');
+};
+var CheckNpmInstall = function CheckNpmInstall() {
+  return CheckPackageInstall('npm --version');
 };
 
 /**
