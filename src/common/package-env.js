@@ -4,14 +4,10 @@
  * @date 2018-12-11 22:47:11
  */
 
-import Shell from 'shelljs'
+import { Exec } from './shell'
 
 export const CheckPackageInstall = shell => {
-  return new Promise(resolve => {
-    Shell.exec(shell, {silent: true}, code => {
-      resolve(code === 0)
-    })
-  })
+  return Exec(shell).then(res => res.code === 0)
 }
 
 export const CheckYarnInstall = () => {
