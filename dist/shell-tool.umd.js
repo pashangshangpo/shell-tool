@@ -3970,6 +3970,27 @@
 	};
 
 	/**
+	 * @file shell
+	 * @author xiaozhihua
+	 * @date 2018-12-12 09:13:49
+	 */
+	var Exec = function Exec(shell$$1) {
+	  return new Promise(function (resolve) {
+	    shell.exec(shell$$1, {
+	      silent: true
+	    }, function (code) {
+	      var output = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+	      var err = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+	      resolve({
+	        code: code,
+	        output: output.trim(),
+	        err: err.trim()
+	      });
+	    });
+	  });
+	};
+
+	/**
 	 * @file index
 	 * @author xiaozhihua
 	 * @date 2018-12-11 22:34:43
@@ -3978,6 +3999,7 @@
 	exports.CheckPackageInstall = CheckPackageInstall;
 	exports.CheckYarnInstall = CheckYarnInstall;
 	exports.CheckNpmInstall = CheckNpmInstall;
+	exports.Exec = Exec;
 
 	Object.defineProperty(exports, '__esModule', { value: true });
 
