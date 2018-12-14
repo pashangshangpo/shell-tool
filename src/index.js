@@ -5,5 +5,5 @@
  */
 
 export { CheckPackageInstall, CheckYarnInstall, CheckNpmInstall } from './common/package-env'
-export { Exec } from './common/shell'
+export { default as Shell, Exec } from './common/shell'
 export { default as Git } from './common/git'
