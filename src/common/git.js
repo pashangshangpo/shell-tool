@@ -4,10 +4,19 @@
  * @date 2018-12-12 22:12:10
  */
 
+import { basename, join } from 'path'
+import { Path } from 'node-tool'
 import { Exec } from './shell'
 
-const Clone = (gitPath, targetPath) => {
-  return Exec(`git clone ${gitPath} ${targetPath}`)
+const Clone = async (gitPath, targetPath) => {
+  let name = basename(gitPath).split('.')[0]
+  let target = join(targetPath, name)
+
+  if (await Path.exists(target)) {
+    return Exec(`cd ${target} && git fetch --all && git reset --hard origin/master`)
+  }
+
+  return Exec(`git clone ${gitPath} ${target}`)
 }
 
 export default {
