@@ -13,10 +13,20 @@ const Clone = async (gitPath, targetPath) => {
   let target = join(targetPath, name)
 
   if (await Path.exists(target)) {
-    return Exec(`cd ${target} && git fetch --all && git reset --hard origin/master`)
+    return Exec(`cd ${target} && git fetch --all && git reset --hard origin/master`).then(res => {
+      return {
+        ...res,
+        targetPath: target
+      }
+    })
   }
 
-  return Exec(`git clone ${gitPath} ${target}`)
+  return Exec(`git clone ${gitPath} ${target}`).then(res => {
+    return {
+      ...res,
+      targetPath: target
+    }
+  })
 }
 
 export default {
