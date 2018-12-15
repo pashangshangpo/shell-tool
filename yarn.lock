@@ -1943,6 +1943,10 @@ node-releases@^1.0.1:
   dependencies:
     semver "^5.3.0"
 
+"node-tool@https://github.com/pashangshangpo/node-tool.git":
+  version "0.1.0"
+  resolved "https://github.com/pashangshangpo/node-tool.git#8cfd4bc914cf700fea026c4a85bff30b84824152"
+
 noop-logger@^0.1.1:
   version "0.1.1"
   resolved "http://registry.npm.taobao.org/noop-logger/download/noop-logger-0.1.1.tgz#94a2b1633c4f1317553007d8966fd0e841b6a4c2"
