@@ -708,6 +708,10 @@
     "@webassemblyjs/wast-parser" "1.7.11"
     "@xtuc/long" "4.2.1"
 
+"@xiaozhihua/node-tool@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.npmjs.org/@xiaozhihua/node-tool/-/node-tool-0.1.0.tgz#ae41e6050d4665e9ab1d69d87addd736a9969221"
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/@xtuc/ieee754/download/@xtuc/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
@@ -2823,10 +2827,6 @@ node-releases@^1.1.3:
   resolved "http://registry.npm.taobao.org/node-releases/download/node-releases-1.1.6.tgz#47d160033e24a64e79487a62de63cf691052ec54"
   dependencies:
     semver "^5.3.0"
-
-"node-tool@https://github.com/pashangshangpo/node-tool.git":
-  version "0.1.0"
-  resolved "https://github.com/pashangshangpo/node-tool.git#ca28933ca80ecf20b825ab1307f8df9bb7178feb"
 
 nodemon@^1.18.7:
   version "1.18.9"

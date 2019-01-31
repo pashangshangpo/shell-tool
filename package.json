@@ -24,7 +24,7 @@
     "rimraf": "^2.6.2"
   },
   "dependencies": {
-    "shelljs": "^0.8.3",
-    "node-tool": "https://github.com/pashangshangpo/node-tool.git"
+    "@xiaozhihua/node-tool": "^0.1.0",
+    "shelljs": "^0.8.3"
   }
 }
