@@ -1,5 +1,5 @@
 {
-  "name": "shell-tool",
+  "name": "@xiaozhihua/shell-tool",
   "version": "0.1.0",
   "main": "build/main.js",
   "license": "MIT",
