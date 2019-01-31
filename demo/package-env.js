@@ -1,4 +1,4 @@
-const { CheckNpmInstall, CheckYarnInstall, CheckPackageInstall } = require('../dist/shell-tool.cjs')
+const { CheckNpmInstall, CheckYarnInstall, CheckPackageInstall } = require('../build/main')
 
 CheckNpmInstall().then(res => {
   console.log('npm', res)

@@ -1,4 +1,4 @@
-const { Exec } = require('../dist/shell-tool.cjs')
+const { Exec } = require('../build/main')
 
 Exec('node --version').then(res => {
   console.log(res)

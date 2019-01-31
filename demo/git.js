@@ -1,5 +1,5 @@
 const { Path } = require('node-tool')
-const { Git } = require('../dist/shell-tool.cjs')
+const { Git } = require('../build/main')
 
 Git.Clone(
   'https://github.com/pashangshangpo/peak-mock.git',
