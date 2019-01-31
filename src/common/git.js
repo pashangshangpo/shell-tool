@@ -5,7 +5,7 @@
  */
 
 import { basename, join } from 'path'
-import { Path } from 'node-tool'
+import { Path } from '@xiaozhihua/node-tool'
 import { Exec } from './shell'
 
 const Clone = async (gitPath, targetPath) => {
