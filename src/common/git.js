@@ -4,17 +4,9 @@
  * @date 2018-12-12 22:12:10
  */
 
-import {
-  Path
-} from '@xiaozhihua/node-tool';
-import {
-  basename,
-  join
-} from 'path';
-import {
-  Exec
-} from './shell';
-
+import { Path } from '@xiaozhihua/node-tool'
+import { basename, join } from 'path'
+import { Exec } from './shell'
 
 const Clone = async (gitPath, targetPath, branch = 'master') => {
   let name = basename(gitPath).split('.')[0]
