@@ -4,17 +4,25 @@
  * @date 2018-12-12 22:12:10
  */
 
-import { basename, join } from 'path'
-import { Path } from '@xiaozhihua/node-tool'
-import { Exec } from './shell'
+import {
+  Path
+} from '@xiaozhihua/node-tool';
+import {
+  basename,
+  join
+} from 'path';
+import {
+  Exec
+} from './shell';
 
-const Clone = async (gitPath, targetPath) => {
+
+const Clone = async (gitPath, targetPath, branch = 'master') => {
   let name = basename(gitPath).split('.')[0]
   let target = join(targetPath, name)
 
   if (await Path.exists(target)) {
     return Exec(
-      `cd ${target} && git fetch --all && git reset --hard origin/master`
+      `cd ${target} && git fetch && git reset --hard origin/${branch} && git merge ${branch}`
     ).then(res => {
       return {
         ...res,
@@ -23,7 +31,7 @@ const Clone = async (gitPath, targetPath) => {
     })
   }
 
-  return Exec(`git clone ${gitPath} ${target}`).then(res => {
+  return Exec(`git clone -b ${branch} ${gitPath} ${target}`).then(res => {
     return {
       ...res,
       targetPath: target,
