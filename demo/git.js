@@ -8,7 +8,7 @@ const {
 Git.Clone(
   'https://github.com/wee911/test1.git',
   Path.joinApp('./demo/node_modules'),
-  'master'
+  'v1.1'
 ).then(res => {
   console.log(res)
 })
